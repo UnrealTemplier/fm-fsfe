@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 const httpServer = require('http').createServer();
 const app = express();
 
@@ -13,7 +13,7 @@ httpServer.listen(PORT, () => { console.log('Server started at port 3000') });
 
 /** Begin WebSockets */
 
-import { Server as WebSocketServer } from 'ws';
+const WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({ server: httpServer });
 
 wss.on('connection', function connection(wss) {
