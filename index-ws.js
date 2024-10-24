@@ -16,7 +16,7 @@ httpServer.listen(PORT, () => { console.log('Server started at port 3000') });
 const WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({ server: httpServer });
 
-wss.on('connection', function connection(wss) {
+wss.on('connection', function connection(ws) {
     const numClients = wss.clients.size;
     console.log(`Clients connected: ${numClients}`);
 
